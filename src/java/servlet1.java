@@ -1,7 +1,13 @@
-/* 
+/*
  * To change this license header, choose License Headers in Project Properties.
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
 
-alert("Hello! I am an alert box!!");
+/**
+ *
+ * @author Juan Gallo
+ */
+public class servlet1 {
+    
+}
