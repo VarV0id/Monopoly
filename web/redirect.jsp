@@ -6,9 +6,16 @@ This JSP is here to provide a redirect to the dispatcher
 servlet but should be the only JSP outside of WEB-INF.
 --%>
 <%@page contentType="text/html" pageEncoding="UTF-8"
-        import="Controller.TablerosController"
+        import="Controller.TablerosController, Model.Usuarios.Jugador"
+
         %>
-<% String a = TablerosController.mensaje(); %>
+<% //Declarción de Variables
+    String a = TablerosController.mensaje();
+    int dados[] = new int[2];
+    Jugador jug = new Jugador("asss", 1);
+    int tot;
+    String paljs;
+%>
 
 <html xmlns="http://www.w3.org/1999/xhtml"
       xmlns:h="http://xmlns.jcp.org/jsf/html"
@@ -61,14 +68,28 @@ servlet but should be the only JSP outside of WEB-INF.
                                         <option value="slt7">7</option> 
                                         <option value="slt8">8 </option> 
                                     </select>
-                                    
+
                                     <button type="button" onclick="empiezaElJuego('<%=a%>')">Empezar</button>
                                 </div></td>
                             <td style="width: 70px;">Community Chest</td>
                         </tr>
                         <tr>
                             <td style="width: 70px; background-color:#ffb380;">St. James Place</td>
-                            <td style="width: 70px;" colspan="9">&nbsp;</td>
+                            <td style="width: 70px;" colspan="9">
+                                <div id="turno">
+                                    <label>Tirar Dados</label>
+                                    <%%>
+                                    <label id="valor">Valor</label>
+                                    <button type="button" onclick="
+                                        <%
+                                           
+                                           tot = 0;
+                                           tot = jug.tirarDados(dados);
+                                           %>tirardadospa(<%=tot%>)">Tirar</button>
+                                        
+                                </div>
+                            </td>
+
                             <td style="width: 70px; background-color:#70db70;">Pennsylvania Avenue</td>
                         </tr>
                         <tr>
@@ -114,8 +135,8 @@ servlet but should be the only JSP outside of WEB-INF.
                 </table>
             </div>
         </form>
-        
-        <label><%=a%></label>
+
+
     </h:body>
 </html>
 

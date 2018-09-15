@@ -13,3 +13,9 @@ function hideDiv(a){
     var x = document.getElementById("jugadores");
     x.style.visibility = 'hidden';
 }
+
+function tirardadospa(b){
+    var x = document.getElementById("valor");
+    x.innerHTML = b;
+    return b = 0;
+}

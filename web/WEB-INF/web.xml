@@ -12,9 +12,25 @@
         <servlet-class>org.springframework.web.servlet.DispatcherServlet</servlet-class>
         <load-on-startup>2</load-on-startup>
     </servlet>
+    <servlet>
+        <servlet-name>controlador</servlet-name>
+        <servlet-class>controlador</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>servletMono</servlet-name>
+        <servlet-class>servletMono</servlet-class>
+    </servlet>
     <servlet-mapping>
         <servlet-name>dispatcher</servlet-name>
         <url-pattern>*.htm</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>controlador</servlet-name>
+        <url-pattern>/controlador</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>servletMono</servlet-name>
+        <url-pattern>/servletMono</url-pattern>
     </servlet-mapping>
     <session-config>
         <session-timeout>
